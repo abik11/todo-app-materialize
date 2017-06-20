@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+	body
+		div#app.container
+			header
+				h1 Amazing todo list
+				div
+					router-link.btn.waves-effect.waves-light(to='/') List
+					router-link.btn.waves-effect.waves-light(to='/help') Help
+			br
+			main.row
+				keep-alive
+					router-view.col.s12.m8.offset-m2.l6.offset-l3
+			br
+			footer
+				p Made by Alberto. Powered by VUE.js & Webpack.
+				img(src='img/webpack.png')
+				img(src='img/vuejs.png')
