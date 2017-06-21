@@ -73,7 +73,7 @@ module: {
         }
       },
       { 
-        //Loaders for bootstrap's fonts
+        //Loaders for materialize's fonts
         test: /\.(woff2?|ttf|eot|svg)$/, 
         loader: 'url-loader?limit=10000&name=fonts/[name].[ext]' 
       },
@@ -81,7 +81,7 @@ module: {
   },
   plugins: [   
     new webpack.ProvidePlugin({
-      //Required for bootstrap
+      //Required for materialize
       jQuery: 'jquery',
       $: 'jquery',
       jquery: 'jquery'
