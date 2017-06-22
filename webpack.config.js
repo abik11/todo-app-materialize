@@ -11,11 +11,11 @@ var PurifyCSSPlugin = require('purifycss-webpack');
 var isProduction = process.env.NODE_ENV === 'production';
 
 //Dev and prod conf for SASS and CSS
-var cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+var cssDev = ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader'];
 var cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader', 
   loader: ['css-loader', 'resolve-url-loader', 'sass-loader']
-  //SASS goes through sass-loader, then css-loader
+  //SASS goes through sass-loader, then resolve-url-loader, then css-loader
   //The result is extracted to a file (see plugin configuration)
 });
 var cssConf = isProduction ? cssProd : cssDev;
@@ -106,10 +106,11 @@ module: {
     new HtmlWebpackPlugin({
       template: 'src/index.pug',
       minify: {
-        removeComments: true,
-        collapseWhitespace: true
+        removeComments: isProduction,
+        collapseWhitespace: isProduction
       }
     }),
+    new webpack.optimize.UglifyJsPlugin({ minimize: isProduction }),
     new CleanWebpackPlugin(['.tmp', 'dist']),
     new WebpackNotifierPlugin(),
     new webpack.HotModuleReplacementPlugin(), //Hot Module Replacement
