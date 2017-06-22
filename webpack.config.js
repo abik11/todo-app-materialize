@@ -14,7 +14,7 @@ var isProduction = process.env.NODE_ENV === 'production';
 var cssDev = ['style-loader', 'css-loader', 'sass-loader'];
 var cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader', 
-  loader: ['css-loader', 'sass-loader']
+  loader: ['css-loader', 'resolve-url-loader', 'sass-loader']
   //SASS goes through sass-loader, then css-loader
   //The result is extracted to a file (see plugin configuration)
 });
