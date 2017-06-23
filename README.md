@@ -9,7 +9,7 @@ npm i -g n
 npm i -g npm
 npm i -g rimraf                 #Easily deleting nodejs libraries
 npm i -D clean-webpack-plugin   #Deletes /dist before build (uses rimraf)
-npm i vue vue-router vue-resource
+npm i vue vue-router jquery lodash axios
 npm i -D webpack webpack-dev-server webpack-notifier
 npm i -D cross-env 
 npm i -D vue-loader vue-template-compiler 
@@ -19,7 +19,6 @@ npm i -D html-loader html-webpack-plugin file-loader
 npm i -D babel-core babel-loader babel-preset-es2015 babel-preset-stage-2
 npm i -D materialize-css materialize-loader url-loader resolve-url-loader animate.css
 npm i -D purifycss-webpack purify-css glob-all
-npm i jquery lodash
 npm i -D mocha chai         #Testing framework / Assertion library
 npm i -D mocha-webpack      #Plugin for Webpack to run Mocha
 npm i -D avoriaz            #Wraper for Vue components for testing

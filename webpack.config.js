@@ -91,6 +91,10 @@ module: {
       lodash: 'lodash',
       _: 'lodash'
     }),
+    new webpack.ProvidePlugin({
+      //Cool AJAX library
+      axios: 'axios'
+    }),    
     new ExtractTextPlugin({
       filename: '/css/[name].css',
       disable: !isProduction 
