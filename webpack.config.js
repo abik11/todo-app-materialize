@@ -50,9 +50,11 @@ module: {
         loader: 'vue-loader',
         options: {
           loaders: { 
-            //Enabling SASS transpilation in vue components
-            'scss': 'vue-style-loader!css-loader!sass-loader',
-            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+            //Using babel-loader for javascript in .vue components
+            js: 'babel-loader?presets[]=es2015',
+            //Enabling SASS transpilation in .vue components
+            scss: 'vue-style-loader!css-loader!sass-loader',
+            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
           }
         }
       },
