@@ -86,14 +86,10 @@ module: {
       //Required for materialize
       jQuery: 'jquery',
       $: 'jquery',
-      jquery: 'jquery'
-    }),
-    new webpack.ProvidePlugin({
+      jquery: 'jquery',
       //Nice JS functions, like LINQ for JS
       lodash: 'lodash',
-      _: 'lodash'
-    }),
-    new webpack.ProvidePlugin({
+      _: 'lodash',
       //Cool AJAX library
       axios: 'axios'
     }),    
