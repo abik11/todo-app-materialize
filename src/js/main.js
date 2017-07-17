@@ -3,11 +3,20 @@ import "../../node_modules/materialize-css/dist/js/materialize.min.js";
 require.context("../img/", true, /\.(jpe?g|png|gif|svg)$/i);
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueI18n from 'vue-i18n';
+import Locale from './vue-i18n-locales.js';
+import Language from './common/language.vue';
 import List from './components/List.vue';
 import Help from './components/Help.vue';
 import Comments from './components/comments.vue';
 
 Vue.use(VueRouter);
+Vue.use(VueI18n);
+
+const i18n = new VueI18n({
+	locale: 'en',
+	messages: Locale
+});
 
 const router = new VueRouter({
 	mode: 'history', //REMOVE THIS FOR CORDOVA
@@ -19,4 +28,4 @@ const router = new VueRouter({
 	]
 });
 
-new Vue({router}).$mount("#app");
+new Vue({ router, i18n, components: { Language } }).$mount("#app");

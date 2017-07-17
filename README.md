@@ -9,7 +9,7 @@ npm i -g n
 npm i -g npm
 npm i -g rimraf                 #Easily deleting nodejs libraries
 npm i -D clean-webpack-plugin   #Deletes /dist before build (uses rimraf)
-npm i vue vue-router jquery lodash axios
+npm i vue vue-router vue-i18n jquery lodash axios
 npm i -D webpack webpack-dev-server webpack-notifier
 npm i -D cross-env 
 npm i -D vue-loader vue-template-compiler 

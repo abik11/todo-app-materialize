@@ -6,18 +6,19 @@ html
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
 	body
 		div#app.container
+			language
 			header
-				h1 Amazing todo list
+				h1 {{ $t("title") }}
 				div
-					router-link.btn.waves-effect.waves-light(to='/') List
-					router-link.btn.waves-effect.waves-light(to='/help') Help
-					router-link.btn.waves-effect.waves-light(to='/comments') Comments
+					router-link.btn.waves-effect.waves-light(to='/') {{ $t("menu.list") }}
+					router-link.btn.waves-effect.waves-light(to='/help') {{ $t("menu.help") }}
+					router-link.btn.waves-effect.waves-light(to='/comments') {{ $t("menu.comments") }}
 			br
 			main.row
 				keep-alive
 					router-view.col.s12.m8.offset-m2.l6.offset-l3
 			br
 			footer
-				p Made by Alberto. Powered by VUE.js & Webpack.
+				p {{ $t("footer.author") }}
 				img(src='img/webpack.png')
 				img(src='img/vuejs.png')
