@@ -17,7 +17,9 @@ npm i -D pug pug-html-loader
 npm i -D css-loader sass-loader node-sass extract-text-webpack-plugin
 npm i -D html-loader html-webpack-plugin file-loader
 npm i -D babel-core babel-loader babel-preset-es2015 babel-preset-stage-2
-npm i -D materialize-css materialize-loader url-loader resolve-url-loader animate.css
+npm i -D materialize-css materialize-loader #if you prefer materialize
+npm i -D bootstrap-loader bootstrap-sass    #if you prefer bootstrap
+npm i -D url-loader resolve-url-loader animate.css
 npm i -D purifycss-webpack purify-css glob-all
 npm i -D mocha chai         #Testing framework / Assertion library
 npm i -D mocha-webpack      #Plugin for Webpack to run Mocha

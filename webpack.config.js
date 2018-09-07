@@ -6,6 +6,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var WebpackNotifierPlugin = require('webpack-notifier');
 var PurifyCSSPlugin = require('purifycss-webpack');
+//var bootstrapEntryPoints = require('./bootstrap-css/webpack.bootstrap.config.js'); //bootrstrap
 
 //Variable indicating if we are in production mode
 var isProduction = process.env.NODE_ENV === 'production';
@@ -19,11 +20,14 @@ var cssProd = ExtractTextPlugin.extract({
   //The result is extracted to a file (see plugin configuration)
 });
 var cssConf = isProduction ? cssProd : cssDev;
+var materializeConf = "materialize-loader!./materialize-css/materialize.config.js"; //materialize
+//var bootstrapConf = isProduction ? bootstrapEntryPoints.prod : bootstrapEntryPoints.dev //bootrstrap
 
 module.exports = {
   entry: {
     main: './src/js/main.js',
-    materialize: "materialize-loader!./materialize-css/materialize.config.js"
+    materialize: materializeConf //materialize
+    //bootstrap: bootstrapConf //bootrstrap
   },
   output: {
     filename: '[name].bundle.js',
