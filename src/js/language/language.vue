@@ -1,5 +1,5 @@
 <template lang="pug">
-div.lang-box
+.lang-box
     img(src="../../img/lang/United-Kingdom-icon.png", @click="changeLanguage('en')")
     img(src="../../img/lang/Poland-icon.png", @click="changeLanguage('pl')")
     img(src="../../img/lang/Spain-icon.png", @click="changeLanguage('es')")
@@ -16,10 +16,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .lang-box {
-    position: fixed;
-    top: 10px; 
-    right: 10px;
+    margin: 10px;
+}
+
+img {
+    height: 40px;
 }
 </style>

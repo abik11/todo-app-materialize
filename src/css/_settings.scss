@@ -1,2 +1,6 @@
 $font: Arial !default;
-$max-img-height: 50px !default;
+
+@mixin margin-side($px: 5px) {
+    margin-left: $px;
+    margin-right: $px;
+}

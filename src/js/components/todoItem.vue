@@ -15,11 +15,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../css/_settings.scss';
 li {
 	list-style: none;
 }
 button {
-	margin-left: 5px;
-	margin-right: 5px;
+	@include margin-side;
 }
 </style>

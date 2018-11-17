@@ -1,14 +1,18 @@
 <template lang="pug">
-div
-  input.form-control(v-model="newTodoText",
-                     v-on:keyup.enter="addNewTodo",
-                     placeholder="Add a todo")
-  ul
-    li(is="todo-item",
-        v-for="(todo, index) in todos",
-        v-bind:key="todo",
-        v-bind:title="todo",
-        v-on:remove="todos.splice(index, 1)")
+.row
+  .row
+    .col.s12.m8.offset-m2.l4.offset-l4
+      input.form-control(
+        v-model="newTodoText",
+        v-on:keyup.enter="addNewTodo",
+        v-bind:placeholder="$t('empty_input')")
+  .row
+    ul
+      li(is="todo-item",
+          v-for="(todo, index) in todos",
+          v-bind:key="todo",
+          v-bind:title="todo",
+          v-on:remove="todos.splice(index, 1)")
 </template>
 
 <script>
@@ -16,13 +20,15 @@ import TodoItem from './TodoItem.vue'
 
 export default {
   name: 'list',
+  components: { TodoItem },
   data: function(){
     return {
       newTodoText: '',
       todos: [
         'Do the dishes',
         'Take out the trash',
-        'Mow the lawn'
+        'Go out with the dog',
+        'Learn React'
       ]}
     },
     methods: {
@@ -30,7 +36,6 @@ export default {
          this.todos.push(this.newTodoText)
          this.newTodoText = '';
       }
-    },
-    components: { TodoItem }             
+    }        
 }
 </script>

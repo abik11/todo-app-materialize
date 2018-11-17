@@ -1,11 +1,11 @@
 <template lang="pug">
-div
+.row
 	p(v-if="loading") {{ $t("loading") }}
-	div(v-if="!loading", 
-		v-for="comment in comments")
-		p.user {{comment.email}}
-		p {{comment.body}}
-		hr
+	.col.s12.m6.l4(v-else, v-for="comment in comments")
+		.card-panel.black.grey-text
+			p.user.deep-orange-text.text-darken-4 {{comment.email}}
+			hr
+			p {{comment.body}})
 </template>
 
 <script>
@@ -23,19 +23,23 @@ export default {
 		axios.get('https://jsonplaceholder.typicode.com/comments')
 			.then(function(response){
 				that.comments = _.take(response.data, 10);
-				that.loading = false;
+				that.comments = _.each(that.comments, 
+					(comment) => comment.email = comment.email.split('@')[0]);
 			})
 			.catch(function(error){
 				console.log(error);
-				that.loading = true;
-			});
+			})
+			.then(() => that.loading = false);
 	}
 }
 </script>
 
 <style lang="scss" scoped>
-	.user{
-		font-size: 1.5rem;
-		font-weight: bold;
-	}
+hr{
+	border-color: #424242;
+}
+.user{
+	font-size: 1.5rem;
+	font-weight: bold;
+}
 </style>
