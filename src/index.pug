@@ -4,27 +4,32 @@ html
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
 	body.black.grey-text.text-lighten-4
 		#app
-			nav.deep-orange.darken-4
+			nav.nav-wrapper.deep-orange.darken-4
 				a.brand-logo(href="#") {{ $t("title") }}
-				.nav-wrapper
-					ul.right.hide-on-med-and-down
-						li
-							router-link(to='/') {{ $t("menu.list") }}
-						li
-							router-link(to='/help') {{ $t("menu.help") }}
-						li
-							router-link(to='/comments') {{ $t("menu.comments") }}
-						li
-							language
+				ul.right.hide-on-med-and-down
+					li
+						router-link(to='/') {{ $t("menu.list") }}
+					li
+						router-link(to='/help') {{ $t("menu.help") }}
+					li
+						router-link(to='/comments') {{ $t("menu.comments") }}
+					li
+						language
+
 			section.grey.darken-4
 				.container.space-50
 					main
 						keep-alive
 							router-view
+
 			footer.grey-text.text-darken-3.space-50
 				.container
-					p {{ $t("footer.author") }}
-					img(src='img/vuejs.png')
-					img(src='img/webpack.png')
+					.row
+						small {{ $t("footer.author") }}
+					.row
+						img(src='img/vuejs.png')
+						img(src='img/webpack.png')
+						img(src='img/materialize.png')

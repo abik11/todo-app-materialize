@@ -1,8 +1,9 @@
 <template lang="pug">
 .row
   .row
-    .col.s12.m8.offset-m2.l4.offset-l4
-      input.form-control(
+    .input-field.col.s12.m8.offset-m2.l4.offset-l4
+      i.material-icons.prefix add
+      input(
         v-model="newTodoText",
         v-on:keyup.enter="addNewTodo",
         v-bind:placeholder="$t('empty_input')")

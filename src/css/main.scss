@@ -1,5 +1,7 @@
+@import "../../node_modules/material-design-icons/iconfont/material-icons.css";
 @import "../../node_modules/animate.css/animate.css";
 @import 'settings';
+@import '_materialize-css';
 
 body {
 	width: 100%;
@@ -16,6 +18,22 @@ body {
 	text-align: center;
 }
 
-.brand-logo {
-	@include margin-side(10px);
+footer {
+	img {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+		transition: filter $transition;
+		&:hover {
+			-webkit-filter: grayscale(10%);
+			filter: grayscale(10%);
+		}
+	}
+}
+
+.cancel {
+	margin-left: 20px;
+	transition: color $transition;
+	&:hover {
+		 color: #bf360c;
+	}
 }

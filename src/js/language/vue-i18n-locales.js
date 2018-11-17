@@ -4,7 +4,7 @@ var Locale = {
         loading: 'Loading, please wait...',
         empty_input: 'Add a task',
         footer: {
-            author: 'Made by Albert. Powered by Vue.js and Webpack.'
+            author: 'Made by Albert. Powered by Vue.js, Webpack and Materialize.'
         },
         menu: {
             list: 'List',
@@ -21,7 +21,7 @@ var Locale = {
         loading: 'Ładowanie, proszę czekać...',
         empty_input: 'Dodaj zadanie',
         footer: {
-            author: 'Zrobione przez Alberta. Działa dzięki Vue.js i Webpack.'
+            author: 'Zrobione przez Alberta. Działa dzięki Vue.js, Webpack i Materialize'
         },        
         menu: {
             list: 'Lista',
@@ -38,7 +38,7 @@ var Locale = {
         loading: 'Cargando, esperad por favor...',
         empty_input: 'Añadir una tarea',
         footer: {
-            author: 'Hecho por Alberto. Desarrollado con Vue.js y Webpack.'
+            author: 'Hecho por Alberto. Desarrollado con Vue.js, Webpack y Materialize.'
         },        
         menu: {
             list: 'Lista',

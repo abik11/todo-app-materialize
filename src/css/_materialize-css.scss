@@ -1,0 +1,12 @@
+/* Styles directly conencted with Materialize classes */
+
+.brand-logo {
+	@include margin-side(10px);
+}
+
+i.material-icons {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}

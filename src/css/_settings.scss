@@ -1,4 +1,5 @@
-$font: Arial !default;
+$font: Tahoma !default;
+$transition: 0.4s !default;
 
 @mixin margin-side($px: 5px) {
     margin-left: $px;
