@@ -6,9 +6,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var WebpackNotifierPlugin = require('webpack-notifier');
 var PurifyCSSPlugin = require('purifycss-webpack');
-//var bootstrapEntryPoints = require('./bootstrap-css/webpack.bootstrap.config.js'); //bootrstrap
 
-//Variable indicating if we are in production mode
 var isProduction = process.env.NODE_ENV === 'production';
 
 //Dev and prod conf for SASS and CSS
@@ -19,15 +17,12 @@ var cssProd = ExtractTextPlugin.extract({
   //SASS goes through sass-loader, then resolve-url-loader, then css-loader
   //The result is extracted to a file (see plugin configuration)
 });
-var cssConf = isProduction ? cssProd : cssDev;
-var materializeConf = "materialize-loader!./materialize-css/materialize.config.js"; //materialize
-//var bootstrapConf = isProduction ? bootstrapEntryPoints.prod : bootstrapEntryPoints.dev //bootrstrap
+var cssConfig = isProduction ? cssProd : cssDev;
 
 module.exports = {
   entry: {
     main: './src/js/main.js',
-    materialize: materializeConf //materialize
-    //bootstrap: bootstrapConf //bootrstrap
+    materialize: "materialize-loader!./materialize-css/materialize.config.js"
   },
   output: {
     filename: '[name].bundle.js',
@@ -36,7 +31,7 @@ module.exports = {
   devServer: {
     port: 9001,
     open: true,           //Opens browser after build
-    stats: 'errors-only', //Shows errors only in console
+    stats: 'errors-only', //Shows only errors in console
     hot: true             //Hot Module Replacement mode on
   },
 module: {
@@ -64,7 +59,7 @@ module: {
       },
       {
         test: /\.scss$/,
-        use: cssConf 
+        use: cssConfig 
       },
       {
         test: /\.pug$/,
@@ -79,7 +74,6 @@ module: {
         }
       },
       { 
-        //Loaders for materialize's fonts
         test: /\.(woff2?|ttf|eot|svg)$/, 
         loader: 'url-loader?limit=10000&name=fonts/[name].[ext]' 
       },
@@ -87,14 +81,11 @@ module: {
   },
   plugins: [   
     new webpack.ProvidePlugin({
-      //Required for materialize
       jQuery: 'jquery',
       $: 'jquery',
       jquery: 'jquery',
-      //Nice JS functions, like LINQ for JS
       lodash: 'lodash',
       _: 'lodash',
-      //Cool AJAX library
       axios: 'axios'
     }),    
     new ExtractTextPlugin({
