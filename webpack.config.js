@@ -33,7 +33,7 @@ module.exports = {
     stats: 'errors-only', //Shows only errors in console
     hot: true             //Hot Module Replacement mode on
   },
-module: {
+  module: {
     rules: [
       {
         test: /\.js$/,
