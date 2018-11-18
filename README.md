@@ -4,31 +4,16 @@ Just a very simple example of Webpack + Vue.js + Pug + SASS + Materialize with a
 # Build 
 
 1. Install dependencies<br />
-In general this should work:
-```bash
-npm i
-```
-but if it doesn't here is the whole list of commands
-```bash
-npm i -g n 
-npm i -g npm
-npm i -g rimraf                 #Easily deleting nodejs libraries
-npm i -D clean-webpack-plugin   #Deletes /dist before build (uses rimraf)
-npm i vue vue-router vue-i18n jquery lodash axios
-npm i -D webpack webpack-dev-server webpack-notifier
-npm i -D cross-env 
-npm i -D vue-loader vue-template-compiler 
-npm i -D pug pug-html-loader
-npm i -D css-loader sass-loader node-sass extract-text-webpack-plugin
-npm i -D html-loader html-webpack-plugin file-loader
-npm i -D babel-core babel-loader babel-preset-es2015 babel-preset-stage-2
-npm i -D materialize-css material-design-icons
-npm i -D url-loader resolve-url-loader animate.css
-npm i -D purifycss-webpack purify-css glob-all
-```
+`npm i`
 
 2. Run in development mode<br />
 `npm run dev`
 
 3. Run for production<br />
 `npm run build`
+
+4. Installing this can be really useful, especially on Windows to quickly delete node_modules:
+```bash
+npm i -g rimraf
+rimraf node_modules
+```
