@@ -1,5 +1,6 @@
-$font: Tahoma !default;
-$transition: 0.4s !default;
+$font: "Roboto" !default;
+$light-orange: #ff8a65 !default;
+$transition: 0.3s !default;
 
 @mixin margin-side($px: 5px) {
     margin-left: $px;

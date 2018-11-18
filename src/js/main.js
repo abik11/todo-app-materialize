@@ -1,4 +1,4 @@
-import "../../node_modules/materialize-css/dist/js/materialize.min.js";
+import "materialize-css";
 require.context("../img/", true, /\.(jpe?g|png|gif|svg)$/i);
 import Vue from 'vue';
 import VueRouter from 'vue-router';

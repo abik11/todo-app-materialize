@@ -21,8 +21,7 @@ var cssConfig = isProduction ? cssProd : cssDev;
 
 module.exports = {
   entry: {
-    main: './src/js/main.js',
-    materialize: "materialize-loader!./materialize-css/materialize.config.js"
+    main: './src/js/main.js'
   },
   output: {
     filename: '[name].bundle.js',

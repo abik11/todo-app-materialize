@@ -4,6 +4,11 @@ Just a very simple example of Webpack + Vue.js + Pug + SASS + Materialize with a
 # Build 
 
 1. Install dependencies<br />
+In general this should work:
+```bash
+npm i
+```
+but if it doesn't here is the whole list of commands
 ```bash
 npm i -g n 
 npm i -g npm
@@ -17,7 +22,7 @@ npm i -D pug pug-html-loader
 npm i -D css-loader sass-loader node-sass extract-text-webpack-plugin
 npm i -D html-loader html-webpack-plugin file-loader
 npm i -D babel-core babel-loader babel-preset-es2015 babel-preset-stage-2
-npm i -D materialize-css materialize-loader
+npm i -D materialize-css material-design-icons
 npm i -D url-loader resolve-url-loader animate.css
 npm i -D purifycss-webpack purify-css glob-all
 ```

@@ -1,5 +1,9 @@
 /* Styles directly conencted with Materialize classes */
 
+.container {
+	text-align: center;
+}
+
 .brand-logo {
 	@include margin-side(10px);
 }
@@ -9,4 +13,21 @@ i.material-icons {
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+}
+
+input:not([type]):focus:not([readonly]), 
+input[type=text]:focus:not([readonly]), 
+input[type=password]:focus:not([readonly]), 
+input[type=email]:focus:not([readonly]), 
+input[type=url]:focus:not([readonly]), 
+input[type=time]:focus:not([readonly]), 
+input[type=date]:focus:not([readonly]), 
+input[type=datetime]:focus:not([readonly]), 
+input[type=datetime-local]:focus:not([readonly]), 
+input[type=tel]:focus:not([readonly]), 
+input[type=number]:focus:not([readonly]), 
+input[type=search]:focus:not([readonly]), 
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid $light-orange !important;
+    box-shadow: 0 1px 0px 0px $light-orange !important;
 }

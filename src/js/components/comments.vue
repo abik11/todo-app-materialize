@@ -35,11 +35,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../css/_settings.scss';
 hr{
 	border-color: #424242;
 }
 .user{
 	font-size: 1.5rem;
 	font-weight: bold;
+	transition: color $transition;
+}
+.card-panel:hover {
+	.user {
+		color: $light-orange !important;
+	}
 }
 </style>
