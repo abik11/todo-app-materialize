@@ -2,7 +2,6 @@
 Just a very simple example of Webpack + Vue.js + Pug + SASS + Materialize with a little bit of axios and lodash. May serve as nice starting point for something bigger.
 
 # Build 
-
 1. Install dependencies<br />
 `npm i`
 
