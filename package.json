@@ -4,7 +4,7 @@
     "scripts": {
         "build": "cross-env NODE_ENV=production webpack -p",
         "watch": "webpack --watch",
-        "dev": "webpack-dev-server --content-base dist/"
+        "dev": "webpack-dev-server --content-base dist/ --history-api-fallback"
     },
     "devDependencies": {
         "animate.css": "^3.5.2",
