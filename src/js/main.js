@@ -4,9 +4,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 import Locale from './language/vue-i18n-locales.js';
-import Language from './language/language.vue';
 //---
 import '../css/main.scss';
+import App from "./app.vue";
 import List from './components/List.vue';
 import Help from './components/Help.vue';
 import Comments from './components/comments.vue';
@@ -21,7 +21,7 @@ const i18n = new VueI18n({
 });
 
 const router = new VueRouter({
-	mode: 'history', //REMOVE THIS FOR CORDOVA
+	mode: 'history',
 	base: __dirname,
 	routes: [
 		{ path: '/', component: List },
@@ -30,4 +30,4 @@ const router = new VueRouter({
 	]
 });
 
-new Vue({ router, i18n, components: { Language } }).$mount("#app");
+new Vue({ components: { App }, router, i18n }).$mount("#app");
