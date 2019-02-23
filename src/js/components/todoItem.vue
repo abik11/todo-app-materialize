@@ -5,7 +5,7 @@ transition(appear,
 	leave-active-class="animated bounceOut")
 	li.col.s12.m6.l4
 		.card-panel.black.grey-text {{title}}
-			i.material-icons.cancel(v-on:click="$emit('remove')") cancel
+			i.material-icons.cancel(@click="$emit('remove')") cancel
 </template>
 
 <script>

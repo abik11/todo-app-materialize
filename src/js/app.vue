@@ -2,6 +2,8 @@
 div
     nav.nav-wrapper.deep-orange.darken-4
         a.brand-logo(href="#") {{ $t("title") }}
+        a.sidenav-trigger.hide-on-large-only(href="#", @click="nav = !nav")
+            i.material-icons menu
         ul.right.hide-on-med-and-down
             li
                 router-link(to='/') {{ $t("menu.list") }}
@@ -11,6 +13,15 @@ div
                 router-link(to='/comments') {{ $t("menu.comments") }}
             li
                 language
+    ul.hide-on-large-only(:style="{'display': nav ? 'block' : 'none'}")
+        li.side-link
+            router-link.grey-text.text-lighten-2(to='/') {{ $t("menu.list") }}
+        li.side-link
+            router-link.grey-text.text-lighten-2(to='/help') {{ $t("menu.help") }}
+        li.side-link
+            router-link.grey-text.text-lighten-2(to='/comments') {{ $t("menu.comments") }}
+        li
+            language
 
     section.grey.darken-4
         .container.space-50
@@ -30,9 +41,21 @@ div
 
 <script>
 import Language from "./language/language.vue";
+import "../../node_modules/materialize-css/js/sideNav.js";
 
 export default {
   name: "app",
-  components: { Language }
+  components: { Language },
+  data(){
+      return {
+          nav: false
+      };
+  }
 };
 </script>
+
+<style scoped>
+    .side-link {
+        padding: 10px;
+    }
+</style>
