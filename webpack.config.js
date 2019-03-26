@@ -61,8 +61,8 @@ module.exports = {
         use: cssConfig 
       },
       {
-        test: /\.pug$/,
-        use: ['html-loader', 'pug-html-loader']
+        test: /\.html$/,
+        use: ['html-loader']
       },      
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -95,12 +95,12 @@ module.exports = {
     }),
     new PurifyCSSPlugin({
       paths: glob.sync([
-        path.join(__dirname, 'src/*.pug'),
+        path.join(__dirname, 'src/*.html'),
         path.join(__dirname, 'src/js/components/*.vue')
       ])
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.pug',
+      template: 'src/index.html',
       minify: {
         removeComments: isProduction,
         collapseWhitespace: isProduction
