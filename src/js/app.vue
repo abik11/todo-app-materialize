@@ -38,15 +38,7 @@
       <div class="container space-50">
         <main>
           <keep-alive>
-            <transition
-              appear
-              name="custom-classes-transition"
-              enter-active-class="animated fadeIn"
-              leave-active-class="animated fadeOut"
-              mode="out-in"
-            >
-              <router-view></router-view>
-            </transition>
+            <router-view></router-view>
           </keep-alive>
         </main>
       </div>
