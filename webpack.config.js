@@ -1,21 +1,22 @@
-var path = require('path');
-var webpack = require('webpack');
-var glob = require('glob-all');
-var VueLoaderPlugin = require('vue-loader/lib/plugin');
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-var WebpackNotifierPlugin = require('webpack-notifier');
-var PurifyCSSPlugin = require('purifycss-webpack');
+const path = require('path');
+const webpack = require('webpack');
+const glob = require('glob-all');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
+const PurifyCSSPlugin = require('purifycss-webpack');
 
-var isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 
 //Dev and prod conf for SASS and CSS
-var cssDev = ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader'];
-var cssProd = [MiniCssExtractPlugin.loader, 'style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader']
+const cssLoaders = ['css-loader', 'resolve-url-loader', 'sass-loader'];
+const cssDev = ['vue-style-loader'].concat(cssLoaders);
+const cssProd = [MiniCssExtractPlugin.loader].concat(cssLoaders);
 //SASS goes through sass-loader, then resolve-url-loader, then css-loader
 //The result is extracted to a file (see plugin configuration)
-var cssConfig = isProduction ? cssProd : cssDev;
+const cssConfig = isProduction ? cssProd : cssDev;
 
 module.exports = {
   entry: {
@@ -45,18 +46,7 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        use: {
-          loader: 'vue-loader',
-          options: {
-            loaders: {
-              //Using babel-loader for javascript in .vue components
-              js: 'babel-loader?presets[]=es2015',
-              //Enabling SASS transpilation in .vue components
-              scss: 'vue-style-loader!css-loader!sass-loader',
-              sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-            }
-          }
-        }
+        use: ['vue-loader']
       },
       {
         test: /\.scss$/,
