@@ -81,7 +81,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .side-link {
   padding: 10px;
 }
