@@ -14,28 +14,25 @@
 <script>
 export default {
   name: "comments",
-  data: function() {
+  data() {
     return {
       comments: "",
       loading: false
     };
   },
-  created: function() {
+  created() {
     var that = this;
     that.loading = true;
     axios
       .get("https://jsonplaceholder.typicode.com/comments")
       .then(function(response) {
         that.comments = _.take(response.data, 10);
-        that.comments = _.each(
-          that.comments,
-          comment => (comment.email = comment.email.split("@")[0])
+        that.comments = _.each(that.comments,
+          comment => comment.email = comment.email.split("@")[0]
         );
       })
-      .catch(function(error) {
-        console.log(error);
-      })
-      .then(() => (that.loading = false));
+      .catch(error => console.log(error))
+      .then(() => that.loading = false);
   }
 };
 </script>
