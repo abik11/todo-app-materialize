@@ -7,9 +7,9 @@ import Locale from './language/vue-i18n-locales.js';
 //---
 import '../css/main.scss';
 import App from "./app.vue";
-import List from './components/List.vue';
-import Help from './components/Help.vue';
-import Comments from './components/comments.vue';
+import TodoList from './views/todoList.vue';
+import Help from './views/Help.vue';
+import Comments from './views/comments.vue';
 
 Vue.use(VueRouter);
 Vue.use(VueI18n);
@@ -24,7 +24,7 @@ const router = new VueRouter({
 	mode: 'history',
 	base: __dirname,
 	routes: [
-		{ path: '/', component: List },
+		{ path: '/', component: TodoList },
 		{ path: '/help', component: Help },
 		{ path: '/comments', component: Comments }
 	]

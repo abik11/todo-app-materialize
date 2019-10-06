@@ -14,6 +14,10 @@ var Locale = {
         help: {
             first: 'You can easily add new tasks.',
             second: 'And even easier delete existing ones.'
+        },
+        error: {
+            cannot_connect: 'Cannot connect to service',
+            no_data: 'No data'
         }
     },
     pl: {
@@ -31,6 +35,10 @@ var Locale = {
         help: {
             first: 'Możesz łatwo dodawać nowe zadania.',
             second: 'A jeszcze łatwiej usuwać te, ktore już istnieją.'
+        },
+        error: {
+            cannot_connect: 'Nie można połączyć się z serwisem',
+            no_data: 'Brak danych'
         }
     },
     es: {
@@ -48,6 +56,10 @@ var Locale = {
         help: {
             first: 'Puedes añadir nuevas tareas fácilmente.',
             second: 'Y eliminar las tareas que ya existen aun más fácilmente.'
+        },
+        error: {
+            cannot_connect: 'No se puede acceder el servicio',
+            no_data: 'No hay datos'
         }
     }
 }

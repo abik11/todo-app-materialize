@@ -7,7 +7,15 @@
       </div>
     </div>
     <div class="row">
-      <ul>
+      <p v-if="error" class="grey-text text-darken-3">
+        <i class="material-icons red-text text-darken-4">warning</i>
+        {{$t('error.cannot_connect')}}
+      </p>
+      <p v-else-if="noTasks" class="grey-text text-darken-3">
+        <i class="material-icons yellow-text text-darken-1">warning</i>
+        {{$t('error.no_data')}}
+      </p>
+      <ul v-else>
         <li
           is="todo-item"
           v-for="todo in todos"
@@ -21,17 +29,23 @@
 </template>
 
 <script>
-import TodoItem from "./TodoItem.vue";
+import TodoItem from "../components/todoItem.vue";
 
 export default {
-  name: "list",
+  name: "todoList",
   components: { TodoItem },
   data() {
     return {
       newTodoText: "",
       todos: [],
-      taskApi: "http://localhost:5000/api/tasks"
+      taskApi: "http://localhost:5000/api/tasks",
+      error: false
     };
+  },
+  computed: {
+    noTasks() {
+      return todos.length == 0;
+    }
   },
   methods: {
     async addNewTodo() {
@@ -59,6 +73,7 @@ export default {
         this.todos = tasks.data;
       } 
       catch (err) {
+        this.error = true;
         console.error(err);
       }
     }
