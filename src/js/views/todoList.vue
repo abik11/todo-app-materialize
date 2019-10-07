@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     noTasks() {
-      return todos.length == 0;
+      return this.todos.length == 0;
     }
   },
   methods: {
